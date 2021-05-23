@@ -1,0 +1,20 @@
+org: nicoveg4
+app: update-prices
+service: sls-prices
+
+frameworkVersion: '2'
+
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: '20201221'
+
+functions:
+  hello:
+    handler: handler.hello
+    # Add the following lines:
+    events:
+      - http:
+          path: hello
+          method: post
